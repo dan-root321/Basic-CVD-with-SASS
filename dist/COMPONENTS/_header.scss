@@ -1,0 +1,20 @@
+.header{
+    .branding{
+        display: flex;
+        align-items: center;
+
+        img{
+            width: 4rem;
+        }
+
+        h3{
+            margin-left: 1rem;
+            font-size: 2.5rem;
+            color: $clr-light;
+
+            span{
+                color: $clr-primary;
+            }
+        }
+    }
+}
