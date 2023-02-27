@@ -258,7 +258,7 @@ body {
 }
 .banner__text a {
   margin-top: 3rem;
-  padding: 1.2rem 5rem;
+  padding: 1.2rem 5 rem;
   border-radius: 5rem;
   display: inline-block;
   border: 2px solid transparent;
