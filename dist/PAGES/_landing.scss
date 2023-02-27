@@ -1,0 +1,144 @@
+.banner{
+    &__wrapper{
+        padding-top: 10rem;
+        text-align: center;
+        padding-bottom: 10rem;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    &__text{
+        text-align: center;
+        padding: 0 1rem;
+         
+
+        h1{
+            color: $clr-primary;
+            font-size: 5rem;
+            padding-bottom: 2rem;
+        }
+
+        p{
+            text-align: justify;
+        }
+
+        a{
+            margin-top: 3rem;
+            padding: 1.2rem 5rem;
+            border-radius: 5rem;
+            display: inline-block;
+            border: 2px solid transparent;
+            color: $clr-dark;
+            background: #ffa700;
+            color: #ffffff;
+            border: 2px solid transparent;
+        }
+
+        a:hover{
+
+            background: $clr-dark;
+            color: #ffffff;
+            border: 2px solid transparent;
+        }
+        
+    }
+
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            padding-top: 20rem;
+           
+        }
+        
+        img{
+            width:50%
+        }
+
+        &__text{
+            text-align: left;
+            h1{
+                text-align: left;
+                font-size: 7rem;
+                max-width: 60%;
+            }
+
+            p{
+                width: 70%;
+                padding: 2rem 0;
+            }
+
+            
+        }
+    }
+
+}
+
+.services{
+    background: $clr-dark;
+
+    &__wrapper{
+        padding-top: 6rem;
+        text-align: center;
+        flex-direction: column;
+        @include grid(1, 1rem);
+        
+    }
+
+    &__item{
+
+        padding: 2.5rem 1rem;
+
+        i{
+            font-size: 7rem;
+            color: #ffa700;
+            margin: 2rem 0;
+        }
+
+        h4{
+            color: #ffa700;
+            font-size: 2.5rem;
+            padding: 2rem 0;
+            font-weight: 600;
+        }
+        
+        p{
+            color: $clr-dark;
+            margin: 2rem 0;
+            text-align: justify; 
+            color: $clr-light;   
+        }
+
+        a{
+            margin-top: 3rem;
+            padding: 1.2rem 5rem;
+            border-radius: 5rem;
+            display: inline-block;
+            border: 2px solid transparent;
+            color: $clr-dark;
+            background:$clr-primary;
+            color: $clr-light;
+            border: 2px solid transparent;
+        }
+
+        a:hover{
+            background: $clr-light;
+            color: $clr-dark;
+            border: 2px solid transparent;
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            padding: 10rem 0;
+            text-align: center;
+    
+            @include grid (3, 5rem);
+        }
+    
+       
+    }
+}

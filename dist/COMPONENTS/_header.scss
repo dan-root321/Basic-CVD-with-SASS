@@ -1,10 +1,19 @@
 .header{
+    position: relative;
+    position: fixed;
+    width: 100%;
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .branding{
         display: flex;
         align-items: center;
 
         img{
-            width: 4rem;
+            width: 5rem;
         }
 
         h3{
@@ -17,4 +26,115 @@
             }
         }
     }
+
+    &__nav{
+        position: absolute;
+        background:$clr-light;
+        top: 8rem;
+        right: -100rem;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        transition: 0.5s ease;
+
+        ul{
+            display: block;
+            text-align: center;
+
+            li{
+                padding: 2rem 0;
+                margin-left: 0;
+                border-bottom: 1px solid #2b2b2b;
+
+                a{
+                    color: $clr-dark;
+                    font-size: 3rem;
+                }
+                &:hover{
+                    background: hsl(0, 0%, 50%);
+                    a{
+                        color: $clr-primary;
+                    }
+                }
+            }
+        }
+
+        &.open{
+            right: 0;
+            transition: .5s ease;
+
+            // ul{
+            //     li:hover{
+            //         padding: 2rem 0;
+            //         border-bottom: 1px solid #2b2b2b;
+            //         background: hsl(0, 0%, 50%);
+            //         &:hover a{
+            //             color: $clr-primary;
+            //         }
+            //     }
+            // }
+        }
+
+    }
+
+    .toggle__menu{
+        display: block;
+        
+        span{
+            width: 3.5rem;
+            height: 0.3rem;
+            background-color: $clr-primary;
+            display: block;
+            margin-bottom: .5rem;
+            border-radius: 5rem;
+            transition: .5s ease;
+        }
+
+        &.open{
+            span:first-child{
+                transform: translate(0, 10px) rotate(225deg);
+                transition: .5s ease;
+            }
+   
+            span:nth-child(2){
+                opacity: 0;
+                transition: .5s ease;
+            }
+   
+            span:last-child{
+                transform: translate(0, -7px) rotate(-225deg);
+                transition: .5s ease;
+            } 
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        .toggle__menu{
+            display: none;
+        }
+
+        &__nav{
+            position: unset;
+            width: unset;
+            height: unset;
+            background: none;
+
+            ul{
+                display: flex;
+                
+                li{
+                    margin-left: 2rem;
+                    
+                    &:hover{
+                        background: none;
+                    }
+                    a{
+                        color: $clr-light;
+                    }
+                }
+            }
+        }
+    
+    }   
+    
 }
